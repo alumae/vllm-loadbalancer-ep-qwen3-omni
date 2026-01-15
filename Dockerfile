@@ -11,6 +11,8 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     python3 -m pip install --upgrade -r /requirements.txt
 
 
+ENV PYTHONPATH="/:/vllm-workspace"
+
 COPY src /src
 
 WORKDIR /src
